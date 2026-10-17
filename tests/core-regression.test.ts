@@ -1,5 +1,6 @@
 import test from 'node:test';import assert from 'node:assert/strict';import {readFileSync,writeFileSync,mkdtempSync,rmSync} from 'node:fs';import {resolve,join} from 'node:path';
 import * as c from '../src/core/index.ts';
+import {tmpdir} from 'node:os';
 const row=(id:string,day:string,text='Memoria compartida '+id,synthetic=true,sourceId='forum'):c.ConversationInput=>({id,sourceId,sourceName:'Foro público revisado',synthetic,title:'Conversación técnica',startedAt:day,messages:[{id:id+'m',text,publishedAt:day}]});
 const run=(fn:(s:c.Store)=>void)=>{const s=c.openStore(':memory:');try{fn(s);}finally{s.close();}};
 test('forward-only conversations never inflate denominator or topic assignments',()=>run(s=>{
@@ -41,7 +42,7 @@ test('privacy redaction includes Spanish self-identification and profile links, 
 test('messages after the window do not introduce a topic into the historical comparison',()=>run(s=>{const r=row('future-topic','2026-10-09T00:00:00Z','Una conversación general');r.messages.push({id:'future-memory',text:'Memoria compartida llega después',publishedAt:'2026-10-16T00:00:00Z'});c.ingestConversations(s,[r]);assert.equal(c.getTrends(s).topics.find(t=>t.id==='memory')!.currentCount,0);}));
 
 test('changing editable taxonomy reclassifies both windows with one version without changing manual expected labels',()=>run(s=>{
- const dir=mkdtempSync(join(process.env.TMPDIR??'/root/.hermes/cache/scratch','taxonomy-'));const file=join(dir,'taxonomy.json');const original=readFileSync(new URL('../data/taxonomy.json',import.meta.url),'utf8');const previous=process.env.INTRAHILO_TAXONOMY;
+ const dir=mkdtempSync(join(tmpdir(),'taxonomy-'));const file=join(dir,'taxonomy.json');const original=readFileSync(new URL('../data/taxonomy.json',import.meta.url),'utf8');const previous=process.env.INTRAHILO_TAXONOMY;
  try{writeFileSync(file,original);process.env.INTRAHILO_TAXONOMY=file;c.ingestConversations(s,[row('oldx','2026-10-02T00:00:00Z','Trama persistente'),row('newx','2026-10-09T00:00:00Z','Trama recuperable')]);const before=c.getTrends(s);const config=JSON.parse(original);config.rules.find((r:any)=>r.id==='memory').aliases.push('trama');writeFileSync(file,JSON.stringify(config));const after=c.getTrends(s);assert.notEqual(after.classifierVersion,before.classifierVersion);const memory=after.topics.find(t=>t.id==='memory')!;assert.equal(memory.previousCount,1);assert.equal(memory.currentCount,1);assert.equal((s.db.prepare('SELECT DISTINCT version FROM assignments').all() as any[]).length,1);
  }finally{if(previous===undefined)delete process.env.INTRAHILO_TAXONOMY;else process.env.INTRAHILO_TAXONOMY=previous;rmSync(dir,{recursive:true,force:true});}
 }));
