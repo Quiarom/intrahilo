@@ -2,14 +2,18 @@
 
 ## Estado de entrega
 
-Prototipo local ejecutado y verificado. No se publicó repositorio, no se desplegó fuera del servidor y no se activó facturación ni un servicio pago. No se usó JEV.
+Prototipo local ejecutado y verificado. Código público: https://github.com/Quiarom/intrahilo, bajo MIT. No se desplegó la aplicación fuera del servidor y no se activó facturación ni un servicio pago. No se usó JEV.
+
+Actualización Open Source: LICENSE, CONTRIBUTING, SECURITY, CODE_OF_CONDUCT, CODEOWNERS, plantillas de issues/PR, Dependabot semanal, CI en Node 24/26 con acciones fijadas por SHA y permisos de lectura. Secret scanning, push protection y reportes privados de vulnerabilidades habilitados en GitHub y leídos de vuelta. Auditoría npm de todas las dependencias: cero avisos al ejecutar esta actualización (no garantía futura). CI real pasó 42/42 pruebas en ambas versiones, types/build/MCP/evaluación. Se corrigió un test que dependía de una ruta temporal del operador.
+
+Marca pendiente de elección: el usuario rechazó la tanda literal con sufijos Brief/Feed. Investigación y candidatos en docs/BRAND_RESEARCH.md. No renombrar ni producir logo final sin resolver esta elección; no copiar marcas del evento.
 
 Ruta de trabajo: `/root/intrahilo`. Stack: TypeScript, React/Vite, backend HTTP Node, SQLite nativo. `README.md` contiene los comandos y límites; `docs/DEMO.md`, el guion de 90 segundos; `docs/METRICS.md` y `docs/IMPORT.md`, reglas y formato.
 
 ## Arranque y reproducción
 
 ```bash
-npm ci --no-audit --no-fund
+npm ci --ignore-scripts --no-fund
 cp .env.example .env
 npm run demo:reset
 npm run build

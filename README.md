@@ -8,10 +8,10 @@ La comunidad objetivo no tiene URL verificada. **No se ha analizado Asilo Digita
 
 ## Arrancar desde cero
 
-Requiere **Node ≥24.2 y npm**, sin Docker, cuentas ni API keys para la demo. Verificado con Node 26.7.0. Todo se ejecuta localmente; no hay publicación ni despliegue externo.
+Requiere **Node ≥24.2 y npm**, sin Docker, cuentas ni API keys para la demo. Verificado con Node 26.7.0. La aplicación se ejecuta localmente y no está desplegada. El código es público bajo MIT; esto no publica tu base de datos ni expone el backend.
 
 ```bash
-npm ci --no-audit --no-fund
+npm ci --ignore-scripts --no-fund
 cp .env.example .env
 npm run demo:reset
 npm run build
@@ -127,4 +127,4 @@ Código bajo [licencia MIT](LICENSE). La licencia del código no concede derecho
 - Acciones fijadas por SHA, permisos de solo lectura, sin credenciales persistidas en checkout y sin pull_request_target. Dependabot semanal para npm y Actions; no auto-merge.
 - Desarrollo local con Node 24 LTS (`.nvmrc`), archivos de texto LF/UTF-8 y exclusiones de secretos/SQLite/cachés.
 
-[Contexto de la hackathon](docs/HACKATHON.md): [hackathon.30x.com](https://hackathon.30x.com/) exige repositorio público durante la revisión. Proyecto independiente, no producto oficial ni aval de 30X. El nombre está en revisión: no se afirma disponibilidad legal de marca o dominio.
+[Contexto de la hackathon](docs/HACKATHON.md): [hackathon.30x.com](https://hackathon.30x.com/) exige repositorio público durante la revisión. Proyecto independiente, no producto oficial ni aval de 30X. El nombre está en revisión: consulta [la investigación de marca](docs/BRAND_RESEARCH.md). No se afirma disponibilidad legal de marca o dominio.

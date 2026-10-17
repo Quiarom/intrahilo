@@ -1,5 +1,12 @@
 # PROGRESS
 
+## Actualización Open Source y marca
+- Repositorio público bajo MIT por solicitud del usuario y requisito de revisión del evento verificado en https://hackathon.30x.com/. Aplicación sigue local, sin despliegue.
+- Guías de contribución/seguridad/conducta, CODEOWNERS, plantillas, Dependabot y CI mínima con SHA fijos y permisos de lectura. Funciones GitHub de secret scanning, push protection, alertas/actualizaciones de dependencias y reporting privado activadas y verificadas por API.
+- CI alojada expuso una ruta de /root en un test; se sustituyó por node:os tmpdir(). CI verde con Node 24/26: 42 pruebas por versión, typecheck, build, cliente MCP y evaluación. npm audit completo sin avisos en la ejecución de esta actualización.
+- Marca aún sin aprobar: el usuario pidió investigar marcas juveniles y una identidad capaz de tener logo, no pegar sufijos funcionales a venezolanismos. Ver docs/BRAND_RESEARCH.md; no se cambió nombre ni se compró ningún dominio.
+
+
 ## Descubrimiento
 - Proyecto nuevo en `/root/intrahilo`; no existe proyecto INTRAHILO ni instrucciones AGENTS.md en directorios superiores inspeccionados.
 - Node v26.7.0 / npm 11.19.0. VPS 1967 MiB, ~1011 MiB disponibles al inicio, swap 4GB. Sin binarios Docker/Ollama ni listeners Qdrant/Ollama. No se instalarán modelos.
