@@ -35,8 +35,8 @@
     }
   ],
   "tests": {
-    "tests": 37,
-    "pass": 37,
+    "tests": 42,
+    "pass": 42,
     "fail": 0
   },
   "notVerified": [

@@ -33,7 +33,7 @@ El último comando requiere Python solo para el verificador, no para la aplicaci
 
 ## Evidencia de verificación realizada
 
-- `npm test`: **37 pruebas, 37 pasaron**, cero fallos.
+- `npm test`: **42 pruebas, 42 pasaron**, cero fallos.
 - `npm run typecheck` y `npm run build`: salida 0.
 - `npm run test:mcp`: `MCP_SMOKE_OK`, cuatro herramientas descubiertas y llamadas, argumentos inválidos rechazados, ventanas coherentes con el núcleo del panel.
 - `python scripts/verify-clean.py`: **CLEAN_INSTALL_OK**. Los seis comandos de instalación/verificación salieron 0. HTTP en la copia limpia: 25 conversaciones actuales, 5 de memoria, 8 enlaces de evidencia exactos comprobados, replay añadió 3 y el total cambió a 28.

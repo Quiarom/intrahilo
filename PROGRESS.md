@@ -22,7 +22,7 @@
 - Modelo SQLite separado con migraciones aditivas, corte/versión del clasificador, fechas de contenido/ingesta, oportunidades con referencias exactas y particiones real/demo. Importación plana agrupa explícitamente por día UTC y marca aproximación.
 
 ## Verificación final
-- Suite 37/37, TypeScript y build pasan. Cliente SDK MCP real devuelve MCP_SMOKE_OK para las cuatro herramientas y rechaza argumentos fuera de límite.
+- Suite 42/42, TypeScript y build pasan. Cliente SDK MCP real devuelve MCP_SMOKE_OK para las cuatro herramientas y rechaza argumentos fuera de límite.
 - Instalación limpia EJECUTADA: `python scripts/verify-clean.py` devolvió CLEAN_INSTALL_OK. npm ci, reset, typecheck, test, build y test:mcp salieron 0 sin reutilizar DB/node_modules/dist anteriores. Comprobó HTTP, 8 enlaces exactos y replay 25→28.
 - Descargas reales verificadas y polling condicional 304. DB de trabajo: 10 recursos Atom y 8 GitHub reales, aparte de 2 sintéticos; no hay conversaciones comunitarias reales. Recursos externos con fecha de ingesta completa tras revalidación.
 - Evaluación manual mínima 6/6; no benchmark independiente ni prueba de calidad general. npm audit de producción reportó 0 vulnerabilidades en esa ejecución.
