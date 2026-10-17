@@ -4,3 +4,14 @@ dist/
 var/
 *.log
 artifacts/
+.env.*
+!.env.example
+*.sqlite
+*.sqlite-shm
+*.sqlite-wal
+*.db
+coverage/
+__pycache__/
+*.pyc
+.DS_Store
+.local-notes/

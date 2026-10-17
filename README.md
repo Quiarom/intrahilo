@@ -1,4 +1,6 @@
-# INTRAHILO
+# INTRAHILO · nombre provisional
+
+[![CI](https://github.com/Quiarom/intrahilo/actions/workflows/ci.yml/badge.svg)](https://github.com/Quiarom/intrahilo/actions/workflows/ci.yml) [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 
 **Qué está empezando a importar en tu comunidad.** Prototipo local del reto Radar de contenido de 30X: conversación → señal temporal → evidencia → pregunta posiblemente pendiente → novedad relacionada → propuesta editorial.
 
@@ -113,3 +115,16 @@ SDK oficial 1.x fijado por lockfile: protocolo compatible hasta 2025-11-25. No s
 Reglas precisas y techos: [docs/METRICS.md](docs/METRICS.md). No hay autenticación multiempresa, billing, app móvil, publicación automática, scraping privado, WebSub, clustering dinámico ni plataforma de agentes. No aprende solo: almacena y recalcula con reglas versionadas.
 
 **Siguiente paso de mayor impacto:** proporcionar la URL pública autorizada o una muestra preanonimizada de la comunidad y evaluar clasificación/preguntas con ejemplos reales revisados, antes de añadir infraestructura o afirmar utilidad general.
+
+
+## Open Source y hackathon
+
+Código bajo [licencia MIT](LICENSE). La licencia del código no concede derechos sobre contenido de comunidades, feeds o marcas de terceros. `private: true` en package.json solo impide publicar accidentalmente un paquete npm: no determina la visibilidad del repositorio GitHub.
+
+- [Guía para contribuir](CONTRIBUTING.md), [código de conducta](CODE_OF_CONDUCT.md) y [política de seguridad](SECURITY.md).
+- Issues estructurados, plantilla de PR y CODEOWNERS.
+- CI con Node 24 y 26: instalación desde lockfile sin scripts de instalación, comprobación básica del repositorio, types, tests, build, cliente MCP, evaluación y auditoría de dependencias de producción. El badge muestra el estado REAL del último workflow, no un resultado inventado.
+- Acciones fijadas por SHA, permisos de solo lectura, sin credenciales persistidas en checkout y sin pull_request_target. Dependabot semanal para npm y Actions; no auto-merge.
+- Desarrollo local con Node 24 LTS (`.nvmrc`), archivos de texto LF/UTF-8 y exclusiones de secretos/SQLite/cachés.
+
+[Contexto de la hackathon](docs/HACKATHON.md): [hackathon.30x.com](https://hackathon.30x.com/) exige repositorio público durante la revisión. Proyecto independiente, no producto oficial ni aval de 30X. El nombre está en revisión: no se afirma disponibilidad legal de marca o dominio.

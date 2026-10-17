@@ -1,0 +1,25 @@
+name: Reportar un error
+description: Un comportamiento reproducible con datos sintéticos.
+title: "[Bug]: "
+body:
+  - type: markdown
+    attributes:
+      value: "No publiques secretos ni datos de miembros. Para vulnerabilidades, usa Security → Report a vulnerability."
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Pasos mínimos para reproducir
+      description: Usa la demo o un fixture sintético. Incluye versión/commit y Node.
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Qué esperabas y qué ocurrió
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Evidencia redactada
+      description: Errores o comandos, sin datos personales ni credenciales.
