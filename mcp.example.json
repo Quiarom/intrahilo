@@ -1,0 +1,1 @@
+{"mcpServers":{"intrahilo":{"command":"node","args":["--import","/RUTA/INTRAHILO/node_modules/tsx/dist/loader.mjs","/RUTA/INTRAHILO/src/mcp.ts"],"env":{"INTRAHILO_DB":"/RUTA/INTRAHILO/var/intrahilo.sqlite"}}}}

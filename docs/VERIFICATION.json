@@ -1,0 +1,47 @@
+{
+  "result": "CLEAN_INSTALL_OK",
+  "http": {
+    "radarTotal": 25,
+    "memoryCount": 5,
+    "evidenceLinksChecked": 8,
+    "replayInserted": 3,
+    "afterReplayTotal": 28
+  },
+  "limits": "No network sources, vector services or generation used in this clean verification.",
+  "commands": [
+    {
+      "command": "npm ci --no-audit --no-fund",
+      "exitCode": 0
+    },
+    {
+      "command": "npm run demo:reset",
+      "exitCode": 0
+    },
+    {
+      "command": "npm run typecheck",
+      "exitCode": 0
+    },
+    {
+      "command": "npm test",
+      "exitCode": 0
+    },
+    {
+      "command": "npm run build",
+      "exitCode": 0
+    },
+    {
+      "command": "npm run test:mcp",
+      "exitCode": 0
+    }
+  ],
+  "tests": {
+    "tests": 37,
+    "pass": 37,
+    "fail": 0
+  },
+  "notVerified": [
+    "Vectorial real Ollama/Qdrant",
+    "Generación externa",
+    "Comunidad real sin URL verificada"
+  ]
+}

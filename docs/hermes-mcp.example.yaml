@@ -1,0 +1,12 @@
+# Ejemplo, no aplicado a la configuración global de Hermes.
+mcp_servers:
+  intrahilo:
+    command: node
+    args:
+      - --import
+      - /RUTA/INTRAHILO/node_modules/tsx/dist/loader.mjs
+      - /RUTA/INTRAHILO/src/mcp.ts
+    env:
+      INTRAHILO_DB: /RUTA/INTRAHILO/var/intrahilo.sqlite
+    sampling:
+      enabled: false

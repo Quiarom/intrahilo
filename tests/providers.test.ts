@@ -1,0 +1,6 @@
+import {test} from 'node:test';import assert from 'node:assert/strict';
+import {Retrieval,templateBrief} from '../src/providers.ts';
+const docs=[{id:'demo1',text:'Memoria compartida entre agentes',synthetic:true,url:'/evidence/demo1'},{id:'real1',text:'Memoria privada',synthetic:false,url:'/evidence/real1'}];
+test('textual fallback identifies itself and never mixes provenance',async()=>{const engine=new Retrieval({});const result=await engine.search('memoria',docs,true);assert.equal(result.mode,'textual');assert.deepEqual(result.results.map(r=>r.id),['demo1']);assert.match(result.limitation,/No es búsqueda vectorial/);});
+test('unavailable vector services fall back honestly and preserve evidence links',async()=>{const engine=new Retrieval({ollamaUrl:'http://127.0.0.1:1',qdrantUrl:'http://127.0.0.1:2',model:'small'});const r=await engine.search('memoria',docs,true);assert.equal(r.mode,'textual');assert.equal(r.results[0].url,'/evidence/demo1');assert.match(r.limitation,/no disponibles/);});
+test('editorial template remains a proposal not a source claim',()=>{const r=templateBrief('Memoria');assert.equal(r.method,'plantilla editorial, sin evaluación de modelo');assert.match(r.proposal,/Propuesta/);});

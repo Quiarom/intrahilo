@@ -1,0 +1,9 @@
+# Opcional, NO ejecutado en el VPS. No incluye Ollama ni descarga modelos.
+services:
+  qdrant:
+    image: qdrant/qdrant:v1.19.2
+    ports: ["127.0.0.1:6333:6333"]
+    volumes: ["intrahilo-vectors:/qdrant/storage"]
+    mem_limit: 256m
+volumes:
+  intrahilo-vectors: {}

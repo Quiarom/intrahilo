@@ -1,0 +1,8 @@
+[
+  {"text":"¿Cómo compartir recuerdos persistentes entre agentes?","expected":["memory"]},
+  {"text":"Necesito automatizar un flujo cada mañana","expected":["automation"]},
+  {"text":"Integración con herramientas externas","expected":["integration"]},
+  {"text":"Primer debate sobre audio espacial, tema nuevo en la muestra","expected":["new-topic"]},
+  {"text":"¿Qué tal estuvo el encuentro del sábado?","expected":["other"]},
+  {"text":"Memoria compartida e integración con herramientas","expected":["memory","integration"]}
+]

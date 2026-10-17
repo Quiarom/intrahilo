@@ -1,0 +1,1 @@
+{"preAnonymized":true,"conversations":[{"id":"sample-thread","sourceId":"sample-synthetic","sourceName":"Fuente de ejemplo sintética","synthetic":true,"title":"Dudas sobre memoria","startedAt":"2026-10-10T10:00:00Z","messages":[{"id":"sample-question","text":"¿Cómo compartir memoria entre agentes con permisos separados?","publishedAt":"2026-10-10T10:00:00Z"}]}]}

@@ -1,0 +1,11 @@
+{
+  "rules": [
+    {"id":"memory","name":"Memoria y contexto","aliases":["memory","memories","memoria","contexto","recuerdos"]},
+    {"id":"automation","name":"Automatización","aliases":["automation","automations","automatizacion","automatizar"]},
+    {"id":"new-topic","name":"Audio espacial · tema nuevo","aliases":["new-topic","new topic","tema nuevo","audio espacial"]},
+    {"id":"integration","name":"Integraciones","aliases":["integration","integrations","integracion","integraciones","conectores"]},
+    {"id":"other","name":"Otros temas","aliases":[]}
+  ],
+  "thresholds":{"minConversations":1,"emergingDeltaPp":5,"persistentDays":3,"spikeMaxDays":1,"answerMinCharacters":24,"answerMinWords":4},
+  "matching":"normalización de acentos y coincidencia de alias con límites de palabra; other si no hay coincidencia. No es clasificador de modelo."
+}
