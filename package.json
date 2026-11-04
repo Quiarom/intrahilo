@@ -34,7 +34,7 @@
     "@vitejs/plugin-react": "^4.7.0",
     "tsx": "^4.20.0",
     "typescript": "^5.9.0",
-    "vite": "^6.0.0"
+    "vite": "^6.4.5"
   },
   "license": "MIT",
   "description": "Radar editorial comunitario con evidencia, preparado para la hackathon 30X.",
